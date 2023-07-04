@@ -45,7 +45,6 @@ public class ClientAssertion_Tests
     [TestMethod]
     public void Try_Creating_Assertion_With_Correct_Parameters_Should_Return_Valid_Client_Assertion()
     {
-
         var clientAssertion = new AzureADClientAssertionBuilder(signingCertificate);
         var assertion = clientAssertion.CreateClientAssertion(tenantId, clientId);
 
