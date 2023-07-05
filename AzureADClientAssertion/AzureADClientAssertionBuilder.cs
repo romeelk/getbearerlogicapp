@@ -69,7 +69,7 @@ public class AzureADClientAssertionBuilder
             };
     }
 
-    static string Base64UrlEncode(byte[] arg)
+    public static string Base64UrlEncode(byte[] arg)
     {
         char Base64PadCharacter = '=';
         char Base64Character62 = '+';
@@ -79,8 +79,8 @@ public class AzureADClientAssertionBuilder
 
         string encodedPayload = Convert.ToBase64String(arg);
         encodedPayload = encodedPayload.Split(Base64PadCharacter)[0]; // RemoveAccount any trailing padding
-        encodedPayload= encodedPayload.Replace(Base64Character62, Base64UrlCharacter62); // 62nd char of encoding
-        encodedPayload= encodedPayload.Replace(Base64Character63, Base64UrlCharacter63); // 63rd char of encoding
+        encodedPayload = encodedPayload.Replace(Base64Character62, Base64UrlCharacter62); // 62nd char of encoding
+        encodedPayload = encodedPayload.Replace(Base64Character63, Base64UrlCharacter63); // 63rd char of encoding
 
         return encodedPayload;
     }
